@@ -1,0 +1,14 @@
+1. String
+- strlen()
+- strcmp()
+- explode()
+
+2. Utility
+- var_dump -> isi variable
+- isset() -> untuk cek variabel udah dibikin atau blm (boolean)
+- empty() -> cek variabel kosong atau ngga
+- die() -> program dibawahnya tidak di execute
+- sleep() -> untuk memberhentikan sementaara (parameter waktu)
+
+3. User-Defined Function
+
