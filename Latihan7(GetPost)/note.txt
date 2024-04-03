@@ -1,0 +1,22 @@
+<?php
+    // variable scope / lingkup variable
+    $x = 10;
+    
+    function tampil(){
+        global $x;
+        echo"$x";
+    }
+
+    tampil();
+?>
+
+<------------------------------------------------------>
+
+SUPERGLOBAL VARIABLE
+GET
+POST
+REQUEST
+SESSION
+COOKIES
+SERVER
+ENV
