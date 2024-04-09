@@ -1,6 +1,6 @@
 <?php  
 //menghubungkan connection berbeda file
-require 'function.php';
+require 'function.php'; //-> memanggil file function , bisa require / include
 $mahasiswa = query("SELECT * FROM mahasiswa",$conn);
 
 ?>
@@ -14,6 +14,9 @@ $mahasiswa = query("SELECT * FROM mahasiswa",$conn);
 
 <body>
     <h1> Daftar Mahasiswa</h1>
+
+    <a href="tambah.php">Tambah Data Mahasiswa</a>
+    <br><br>
 
     <table border="1" cellpadding="10" cellspacing="0">
         <tr>
@@ -30,7 +33,7 @@ $mahasiswa = query("SELECT * FROM mahasiswa",$conn);
         <tr>
             <td><?php echo $i; ?></td>
             <td><a href="">ubah</a> |
-                <a href="">hapus</a>
+                <a href="hapus.php?id=<?= $row["id"] ?>" onclick="return confirm('yakin?')">hapus</a>
             </td>
             <td><?php echo $row["Nim"] ?></td>
             <td><?php echo $row["Nama"] ?></td>

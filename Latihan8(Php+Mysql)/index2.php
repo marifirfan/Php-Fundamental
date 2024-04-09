@@ -1,8 +1,21 @@
 <?php  
-//menghubungkan connection berbeda file
-require 'function.php';
-$mahasiswa = query("SELECT * FROM mahasiswa",$conn);
+//conection to database
+$conn = mysqli_connect("localhost", "root", "", "phpdasar");
 
+//ambil data mahasiswa dari tabel phpdasar / query data
+$result = mysqli_query($conn, "SELECT * FROM mahasiswa");
+
+// ambil data (fetch) mahasiswa dari object result
+// 1. mysqli_fetch_row() -> mengembalikan array numerik
+// 2. mysqli_fetch_assoc() -> mengembalikan array associative
+// 3 mysqli_fetch_array() -> mengembalikan nilai numerik dan associative (keduanya)
+// 4. mysqli_fetch_object() -> mengembalikan object
+
+
+// while ($mhs = mysqli_fetch_assoc($result)) {
+//     var_dump($mhs);
+// }
+// var_dump($mhs);
 ?>
 
 
@@ -26,7 +39,7 @@ $mahasiswa = query("SELECT * FROM mahasiswa",$conn);
         </tr>
         <!-- tr data -->
         <?php $i = 1; ?>
-        <?php foreach ($mahasiswa as $row) : ?>
+        <?php while($row = mysqli_fetch_assoc($result)) :?>
         <tr>
             <td><?php echo $i; ?></td>
             <td><a href="">ubah</a> |
@@ -38,7 +51,7 @@ $mahasiswa = query("SELECT * FROM mahasiswa",$conn);
             <td><?php echo $row["Jurusan"] ?></td>
         </tr>
         <?php $i++ ?>
-        <?php endforeach;?>
+        <?php endwhile;?>
 
     </table>
 </body>
