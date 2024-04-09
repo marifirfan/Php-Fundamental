@@ -8,10 +8,14 @@ $result = mysqli_query($conn, "SELECT * FROM mahasiswa");
 // ambil data (fetch) mahasiswa dari object result
 // 1. mysqli_fetch_row() -> mengembalikan array numerik
 // 2. mysqli_fetch_assoc() -> mengembalikan array associative
-// 3 mysqli_fetch_array() -> mengembalikan 
-// 4. mysqli_fetch_object() -> mengembalikan
-$mhs = mysqli_fetch_assoc($result);
-var_dump($mhs);
+// 3 mysqli_fetch_array() -> mengembalikan nilai numerik dan associative (keduanya)
+// 4. mysqli_fetch_object() -> mengembalikan object
+
+
+// while ($mhs = mysqli_fetch_assoc($result)) {
+//     var_dump($mhs);
+// }
+// var_dump($mhs);
 ?>
 
 
@@ -33,16 +37,21 @@ var_dump($mhs);
             <th>Email</th>
             <th>Jurusan</th>
         </tr>
+        <!-- tr data -->
+        <?php $i = 1; ?>
+        <?php while($row = mysqli_fetch_assoc($result)) :?>
         <tr>
-            <td>1</td>
+            <td><?php echo $i; ?></td>
             <td><a href="">ubah</a> |
                 <a href="">hapus</a>
             </td>
-            <td>202210370311030</td>
-            <td>Muhammad arif irfan</td>
-            <td>marifirfann@gmail.com</td>
-            <td>teknik informatika</td>
+            <td><?php echo $row["Nim"] ?></td>
+            <td><?php echo $row["Nama"] ?></td>
+            <td><?php echo $row["Email"] ?></td>
+            <td><?php echo $row["Jurusan"] ?></td>
         </tr>
+        <?php $i++ ?>
+        <?php endwhile;?>
 
     </table>
 </body>
