@@ -27,29 +27,35 @@ if (isset($_POST["submit"])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form Input Mahasiswa</title>
+    <link rel="stylesheet" href="tambah.css">
 </head>
 
 <body>
-    <h2>Form Input Mahasiswa</h2>
-    <form action="" method="POST">
+    <div class="container">
 
-        <label for="Nama">Nama:</label><br>
-        <input type="text" id="Nama" name="Nama" required><br>
+        <h2>Form Input Mahasiswa</h2>
+        <form action="" method="POST">
 
-        <label for="Nim">NIM:</label><br>
-        <input type="text" id="Nim" name="Nim" required><br>
+            <label for="Nama">Nama:</label><br>
+            <input type="text" id="Nama" name="Nama" required><br>
 
-        <label for="Email">Email:</label><br>
-        <input type="email" id="Email" name="Email" required><br>
+            <label for="Nim">NIM:</label><br>
+            <input type="text" id="Nim" name="Nim" required><br>
 
-        <label for="Jurusan">Jurusan:</label><br>
-        <input type="text" id="Jurusan" name="Jurusan" required><br><br>
+            <label for="Email">Email:</label><br>
+            <input type="email" id="Email" name="Email" required><br>
 
-        <input type="submit" name="submit" value="Submit">
-    </form>
-    <br><br>
-    <br><br>
-    <a href="index.php">KEMBALI</a>
+            <label for="Jurusan">Jurusan:</label><br>
+            <input type="text" id="Jurusan" name="Jurusan" required><br><br>
+
+            <input type="submit" name="submit" value="Submit">
+        </form>
+        <br><br>
+        <br><br>
+        <a href="index.php">KEMBALI</a>
+
+    </div>
+
 </body>
 
 </html>
